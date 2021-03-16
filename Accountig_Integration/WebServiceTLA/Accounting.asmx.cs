@@ -12,7 +12,7 @@ using static WebServiceTLA.Class.SaldosDiarios;
 namespace WebServiceTLA
 {
     /// <summary>
-    /// Summary description for WebService_ChinaImport
+    /// 
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -30,6 +30,12 @@ namespace WebServiceTLA
         private string estadoMensaje;
         private string mensaje2 = "";
         private string codigo = "";
+        /// <summary>
+        /// METODO QUE MAPEA LOS SALDOS DIARIOS 
+        /// </summary>
+        /// <param name="json"></param>
+        /// <param name="dataconvert"></param>
+        /// <returns></returns>
         [WebMethod]
         public bool IntSaldosDiarios(string json, ref string dataconvert)
         {

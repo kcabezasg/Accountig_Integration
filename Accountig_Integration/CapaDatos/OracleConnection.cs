@@ -15,7 +15,9 @@ namespace CapaDatos
         {
             providerFactory = DbProviderFactories.GetFactory("System.Data.OracleClient");
         }
-
+        /// <summary>
+        ///CONEXION DE LA BASE DE DATOS DE PRUEBAS 
+        /// </summary>
         public ConexionDeDatos()
         {
         
