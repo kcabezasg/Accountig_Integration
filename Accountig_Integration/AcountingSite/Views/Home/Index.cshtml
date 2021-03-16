@@ -1,0 +1,205 @@
+﻿
+<center>
+    <center style="margin-right: 300px;border-left-style: solid;margin-left: 300px;border-left-width: 0px;padding-left: 10px;padding-right: 10px;">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <input type="hidden" id="user_carrousel" name="user" value="@(ViewBag.user)" />
+            <div class="navbar">
+                <a id="inicio">Inicio</a>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Mantenimientos
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a id="HomTipoDoc">Homologacion de Tipo Doc</a>
+                        <a id="HomCuentaC">Homologacion de Cuentas Contables</a>
+                        @*<a id="SaldosDiarios">Saldos Diarios</a>
+                             <a id="CXC">CXC</a>*@
+                        <a id="IngresosCXC">Ingresos y CXC</a>
+                        <a id="Auditoria">Auditoria</a>
+                    </div>
+                </div>
+                <a id="ayuda">Ayuda</a>
+            </div>
+        </center>
+    <center>
+        <div id="inicioM">
+            <h3>Inicio</h3>
+            <img src="~/Content/tla.png" width="350" height="400" />
+        </div>
+        <div id="HomTipoDocM">
+            <br />
+            <h3>Homologacion de Tipo de Documento</h3>
+            <br />
+            <div id="example">
+                <div id="gridHomTipoDocAll"></div>
+            </div>
+        </div>
+        <div id="HomCuentasContableM">
+            <h3>Homologacion de Cuentas Contables</h3>
+            <br />
+            <div id="gridHomCuentasContableAll"></div>
+        </div>
+        <div id="SaldosDiariosM">
+            <h3>Saldos diarios</h3>
+
+            <table class="egt" align="center">
+
+                <tr>
+
+                    <td align="center"><h4>Fecha Inicio</h4></td>
+
+                    <td align="center"><h4>Fecha Fin</h4></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input id="datepickerstar" style="width: 100%;" />
+
+                    </td>
+
+                    <td>
+                        <input id="datepickerend" style="width: 100%;" />
+                    </td>
+
+                    <td align="center"> <button id="btnAplicar" style=" background-color: #044677 !important ; color: white ;">Aplicar</button></td>
+                </tr>
+
+            </table>
+
+            <div id="gridSaldosDiariosAll"></div>
+        </div>
+        <div id="CXCM">
+            <h3>CXC</h3>
+            <br />
+            <table class="egt" align="center">
+
+                <tr>
+
+                    <td align="center"><h4>Fecha Inicio</h4></td>
+
+                    <td align="center"><h4>Fecha Fin</h4></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input id="datepickerstarCXC" style="width: 100%;" />
+
+                    </td>
+
+                    <td>
+                        <input id="datepickerendCXC" style="width: 100%;" />
+                    </td>
+
+                    <td align="center"> <button id="btnAplicarCXC" style=" background-color: #044677 !important ; color: white ;">Aplicar</button></td>
+
+
+                </tr>
+
+            </table>
+            <div id="gridCXCAll"></div>
+        </div>
+
+        <div id="IngresosCXCM">
+            <h3>Ingresos y CXC</h3>
+            <br />
+            <table class="egt" align="center">
+
+                <tr>
+
+                    <td align="center"><h4>Fecha Inicio</h4></td>
+
+                    <td align="center"><h4>Fecha Fin</h4></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input id="datepickerstaringresos" style="width: 100%;" />
+
+                    </td>
+
+                    <td>
+                        <input id="datepickerendingresos" style="width: 100%;" />
+                    </td>
+
+                    <td align="center"> <button id="btnAplicaringresos" style=" background-color: #044677 !important ; color: white ;">Aplicar</button></td>
+
+
+                </tr>
+
+            </table>
+            <div id="gridingresosAll"></div>
+        </div>
+        <div id="AuditoriaM">
+            <h3>Auditoria</h3>
+            <br />
+            <div id="gridAuditoriaAll"></div>
+        </div>
+
+        <div id="ayudaM">
+            <h3>Ayuda</h3>
+        </div>
+    </center>
+
+    <!--<div class="tab">
+        <button class="tablinks" id="inicio" onclick="openCity(event, 'inicioM')">Inicio</button>
+        <button class="tablinks" id="HomTipoDoc" onclick="openCity(event, 'HomTipoDocM')">Homologacion de Tipo de Documento</button>
+        <button class="tablinks" id="HomCuentaC" onclick="openCity(event, 'SaldosDiariosM')">Homologacion de Cuentas Contables</button>
+        <button class="tablinks" id="CXC" onclick="openCity(event, 'CXCM')">CXC</button>
+        <button class="tablinks" id="Auditoria" onclick="openCity(event, 'AuditoriaM')">Auditoria</button>
+    </div>-->
+
+    <!-- Tab content -->
+
+    <!--<div id="inicioM" class="tabcontent">
+        <h3>Inicio</h3>
+        <img src="~/Content/tla.png" width="350" height="400" />
+
+    </div>
+
+    <div id="HomTipoDocM" class="tabcontent">
+        <br />
+        <h3>Homologacion de Tipo de Documento</h3>
+        <br />
+        <div id="example">
+            <div id="gridHomTipoDocAll"></div>
+        </div>
+    </div>
+    <div id="SaldosDiariosM" class="tabcontent">
+        <h3>Homologacion de Cuentas Contables</h3>
+        <br />
+        <div id="gridHomCuentasContableAll"></div>
+    </div>
+    <div id="CXCM" class="tabcontent">
+        <h3>CXC</h3>
+        <br />
+        <div id="gridCXCAll"></div>
+    </div>
+    <div id="AuditoriaM" class="tabcontent">
+        <h3>Auditoria</h3>
+        <br />
+        <div id="gridAuditoriaAll"></div>
+    </div>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>-->
+</center>

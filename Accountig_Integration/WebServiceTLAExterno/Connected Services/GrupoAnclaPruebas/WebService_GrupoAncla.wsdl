@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OrdenesExpedicion_03">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Json" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrdenesExpedicion_03Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrdenesExpedicion_03Result" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OrdenesExpedicion_03SoapIn">
+    <wsdl:part name="parameters" element="tns:OrdenesExpedicion_03" />
+  </wsdl:message>
+  <wsdl:message name="OrdenesExpedicion_03SoapOut">
+    <wsdl:part name="parameters" element="tns:OrdenesExpedicion_03Response" />
+  </wsdl:message>
+  <wsdl:portType name="WebService_GrupoAnclaSoap">
+    <wsdl:operation name="OrdenesExpedicion_03">
+      <wsdl:input message="tns:OrdenesExpedicion_03SoapIn" />
+      <wsdl:output message="tns:OrdenesExpedicion_03SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService_GrupoAnclaSoap" type="tns:WebService_GrupoAnclaSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrdenesExpedicion_03">
+      <soap:operation soapAction="http://tempuri.org/OrdenesExpedicion_03" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService_GrupoAnclaSoap12" type="tns:WebService_GrupoAnclaSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrdenesExpedicion_03">
+      <soap12:operation soapAction="http://tempuri.org/OrdenesExpedicion_03" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService_GrupoAncla">
+    <wsdl:port name="WebService_GrupoAnclaSoap" binding="tns:WebService_GrupoAnclaSoap">
+      <soap:address location="http://wstlatest.grupopasqui.com/WSGrupoAncla/WebService_GrupoAncla.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService_GrupoAnclaSoap12" binding="tns:WebService_GrupoAnclaSoap12">
+      <soap12:address location="http://wstlatest.grupopasqui.com/WSGrupoAncla/WebService_GrupoAncla.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
